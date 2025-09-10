@@ -2,7 +2,15 @@
 import tensorflow as tf
 
 def create_dataset(data_dir, batch_size=32, augment=False):
-	
+	"""
+	Create a tf.data.Dataset from an image directory with optional augmentation.
+	Args:
+		data_dir (str): Path to image directory.
+		batch_size (int): Batch size.
+		augment (bool): Whether to apply augmentation.
+	Returns:
+		tf.data.Dataset: Prepared dataset.
+	"""
 	dataset = tf.keras.preprocessing.image_dataset_from_directory(
 		data_dir,
 		labels='inferred',
@@ -21,7 +29,9 @@ def create_dataset(data_dir, batch_size=32, augment=False):
 	return dataset
 
 def get_augmentation_layers():
-
+	"""
+	Returns a sequential model of augmentation layers for images.
+	"""
 	return tf.keras.Sequential([
 		tf.keras.layers.RandomFlip("horizontal"),
 		tf.keras.layers.RandomRotation(0.1),
@@ -29,7 +39,9 @@ def get_augmentation_layers():
 	])
 
 def main():
-
+	"""
+	Example usage for dataset creation and inspection.
+	"""
 	import os
 	data_dir = os.path.join(os.path.dirname(__file__), '../../data/train')
 	dataset = create_dataset(data_dir, batch_size=8, augment=True)

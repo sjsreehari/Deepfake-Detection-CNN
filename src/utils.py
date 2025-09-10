@@ -1,5 +1,6 @@
+
 # utils.py
-# Utility functions (metrics, plots, etc.)
+# Utility functions for metrics, plots, and model saving/loading in Deepfake Detector
 
 import os
 import matplotlib.pyplot as plt
@@ -7,7 +8,13 @@ import numpy as np
 import tensorflow as tf
 
 def plot_confusion_matrix(cm, classes, save_path):
-	"""Plot and save confusion matrix."""
+	"""
+	Plot and save a confusion matrix as an image file.
+	Args:
+		cm (np.ndarray): Confusion matrix.
+		classes (list): List of class names.
+		save_path (str): Path to save the plot.
+	"""
 	plt.figure(figsize=(5,5))
 	plt.imshow(cm, cmap='Blues')
 	plt.title('Confusion Matrix')
@@ -25,7 +32,12 @@ def plot_confusion_matrix(cm, classes, save_path):
 	plt.close()
 
 def plot_training_history(history, save_path):
-	"""Plot and save training history (accuracy/loss curves)."""
+	"""
+	Plot and save training history (accuracy/loss curves).
+	Args:
+		history (tf.keras.callbacks.History): Training history object.
+		save_path (str): Path to save the plot.
+	"""
 	acc = history.history.get('accuracy', [])
 	val_acc = history.history.get('val_accuracy', [])
 	loss = history.history.get('loss', [])
@@ -50,9 +62,20 @@ def plot_training_history(history, save_path):
 	plt.close()
 
 def save_model(model, save_path):
-	"""Save Keras model to file."""
+	"""
+	Save a Keras model to file.
+	Args:
+		model (tf.keras.Model): Model to save.
+		save_path (str): Path to save the model.
+	"""
 	model.save(save_path)
 
 def load_model(load_path):
-	"""Load Keras model from file."""
+	"""
+	Load a Keras model from file.
+	Args:
+		load_path (str): Path to load the model from.
+	Returns:
+		tf.keras.Model: Loaded model.
+	"""
 	return tf.keras.models.load_model(load_path)
