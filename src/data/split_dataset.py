@@ -41,7 +41,35 @@ def copy_images():
 
 def prepare_splits():
 	"""Prepare train/val/test splits."""
-	pass
+	"""
+	Splits the dataset into train, val, and test folders.
+	"""
+	import random
+	src_dir = os.path.join(os.path.dirname(__file__), '../../data/split')
+	split_dirs = {
+		'train': os.path.join(os.path.dirname(__file__), '../../data/train'),
+		'val': os.path.join(os.path.dirname(__file__), '../../data/val'),
+		'test': os.path.join(os.path.dirname(__file__), '../../data/test'),
+	}
+	for d in split_dirs.values():
+		os.makedirs(d, exist_ok=True)
+	images = [f for f in os.listdir(src_dir) if f.endswith('.jpg') or f.endswith('.png')]
+	random.shuffle(images)
+	n = len(images)
+	train_end = int(n * 0.7)
+	val_end = int(n * 0.85)
+	for i, fname in enumerate(images):
+		if i < train_end:
+			dst = split_dirs['train']
+		elif i < val_end:
+			dst = split_dirs['val']
+		else:
+			dst = split_dirs['test']
+		src_path = os.path.join(src_dir, fname)
+		dst_path = os.path.join(dst, fname)
+		import shutil
+		shutil.copy2(src_path, dst_path)
+	logging.info(f"Split {n} images into train/val/test folders.")
 
 def main():
 	"""Main orchestration for dataset preparation."""
