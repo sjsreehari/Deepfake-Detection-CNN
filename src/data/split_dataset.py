@@ -26,7 +26,18 @@ def download_dataset():
 
 def copy_images():
 	"""Copy images to split folders."""
-	pass
+	"""
+	Copies images from the raw dataset to train/val/test split folders.
+	"""
+	import shutil
+	src_dir = os.path.join(os.path.dirname(__file__), '../../data/raw')
+	dst_dir = os.path.join(os.path.dirname(__file__), '../../data/split')
+	os.makedirs(dst_dir, exist_ok=True)
+	# Example: Copy all images (stub)
+	for fname in os.listdir(src_dir):
+		if fname.endswith('.jpg') or fname.endswith('.png'):
+			shutil.copy2(os.path.join(src_dir, fname), dst_dir)
+	logging.info(f"Copied images to {dst_dir}")
 
 def prepare_splits():
 	"""Prepare train/val/test splits."""
