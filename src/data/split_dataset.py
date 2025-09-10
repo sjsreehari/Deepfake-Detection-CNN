@@ -73,7 +73,19 @@ def prepare_splits():
 
 def main():
 	"""Main orchestration for dataset preparation."""
-	pass
+	"""
+	Main orchestration for dataset preparation.
+	"""
+	logging.basicConfig(level=logging.INFO)
+	logging.info("Starting dataset preparation...")
+	download_dataset()
+	copy_images()
+	prepare_splits()
+	# Dataset summary
+	for split in ['train', 'val', 'test']:
+		split_dir = os.path.join(os.path.dirname(__file__), f'../../data/{split}')
+		count = len([f for f in os.listdir(split_dir) if f.endswith('.jpg') or f.endswith('.png')])
+		logging.info(f"{split.capitalize()} images: {count}")
 
 if __name__ == "__main__":
 	main()
