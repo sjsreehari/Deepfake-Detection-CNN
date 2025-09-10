@@ -1,21 +1,27 @@
 # evaluate.py
 # Evaluation and metrics script
 
+
 import os
 import tensorflow as tf
 import numpy as np
 from sklearn.metrics import accuracy_score, classification_report, roc_auc_score, confusion_matrix, roc_curve
 import matplotlib.pyplot as plt
+from src.utils_config import load_config
 
-def main():
-	# Load test dataset
-	test_dir = os.path.join(os.path.dirname(__file__), '../data/test')
-	batch_size = 32
+
+
+	# Load config
+	config = load_config(os.path.join(os.path.dirname(__file__), '../configs/train.yaml'))
+
+	test_dir = config['dataset']['test_dir']
+	batch_size = config['dataset']['batch_size']
+	image_size = tuple(config['dataset']['image_size'])
+
 	from src.data.dataloader import create_dataset
 	test_ds = create_dataset(test_dir, batch_size=batch_size, augment=False)
 
-	# Load trained model
-	checkpoint_path = os.path.join(os.path.dirname(__file__), '../outputs/checkpoints/mobilenetv2_best.h5')
+	checkpoint_path = os.path.join(config['checkpoint']['dir'], config['checkpoint']['best_model'])
 	model = tf.keras.models.load_model(checkpoint_path)
 	print("Model loaded for evaluation.")
 
@@ -44,7 +50,7 @@ def main():
 	plt.xlabel('Predicted')
 	plt.ylabel('True')
 	plt.colorbar()
-	plt.savefig(os.path.join(os.path.dirname(__file__), '../outputs/plots/confusion_matrix.png'))
+	plt.savefig(os.path.join(config['plots']['dir'], 'confusion_matrix.png'))
 	plt.close()
 
 	# Plot ROC curve
@@ -56,7 +62,7 @@ def main():
 	plt.ylabel('True Positive Rate')
 	plt.title('ROC Curve')
 	plt.legend(loc='lower right')
-	plt.savefig(os.path.join(os.path.dirname(__file__), '../outputs/plots/roc_curve.png'))
+	plt.savefig(os.path.join(config['plots']['dir'], 'roc_curve.png'))
 	plt.close()
 	print("ROC curve plot saved.")
 
