@@ -2,7 +2,7 @@
 
 import os
 import tensorflow as tf
-from src.data.dataloader import create_dataset
+from data.dataloader import create_dataset
 from src.models.mobilenetv2 import build_mobilenetv2
 
 def main():
