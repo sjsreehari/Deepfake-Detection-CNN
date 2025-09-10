@@ -87,5 +87,7 @@ def main():
 		count = len([f for f in os.listdir(split_dir) if f.endswith('.jpg') or f.endswith('.png')])
 		logging.info(f"{split.capitalize()} images: {count}")
 
+
+# Entrypoint
 if __name__ == "__main__":
 	main()
