@@ -125,20 +125,22 @@ deepfake_detector/
 
 
 
-
 ## Model Performance
 
+
 ### Classification Metrics
-![Classification Metrics](https://github.com/sjsreehari/deepfake-detection-cnn/blob/main/result/Classification%20Report.png)
-- **Shows precision, recall, and F1-score for each class.**
+<img src="https://github.com/sjsreehari/deepfake-detection-cnn/blob/main/result/Heatmap%20for%20Confusion%20Matrix.png" alt="Metrics" width="400" height="300" />
+- **Classification Metrics:** Shows precision, recall, and F1-score for each class.
 
 ### ROC Curve
-![ROC Curve](https://github.com/sjsreehari/deepfake-detection-cnn/blob/main/result/ROC%20Curve.png)
-- **Area under curve (AUC = 0.977) shows excellent class separation.**
+<img src="https://github.com/sjsreehari/deepfake-detection-cnn/blob/main/result/ROC%20Curve.png" alt="ROC Curve" width="400" height="300" />
 
 ### Confusion Matrix
-![Confusion Matrix](https://github.com/sjsreehari/deepfake-detection-cnn/blob/main/result/Heatmap%20for%20Confusion%20Matrix.png)
-- **Shows number of correct and incorrect predictions for each class.**
+<img src="https://github.com/sjsreehari/deepfake-detection-cnn/blob/main/result/Heatmap%20for%20Confusion%20Matrix.png" alt="Confusion Matrix" width="400" height="300" />
+
+- **Classification Metrics:** Shows precision, recall, and F1-score for each class.
+- **ROC Curve:** Area under curve (AUC = 0.977) shows excellent class separation.
+- **Confusion Matrix:** Shows number of correct and incorrect predictions for each class.
 
 ---
 
