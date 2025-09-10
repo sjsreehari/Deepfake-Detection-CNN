@@ -2,13 +2,14 @@
 
 
 # Deepfake Detector
+![Deepfake Detection](https://img.shields.io/badge/Deepfake%20Detection-Project-red)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Python Version](https://img.shields.io/badge/Python-3.11-green)
 
 Detect AI-generated and manipulated facial images (deepfakes) using deep learning. Built with TensorFlow/Keras, leveraging transfer learning (MobileNetV2), advanced augmentation, and robust evaluation metrics.
 
 ---
-![Deepfake Detection](https://img.shields.io/badge/Deepfake%20Detection-Project-red)
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![Python Version](https://img.shields.io/badge/Python-3.11-green)
+
 
 ## Table of Contents
 
