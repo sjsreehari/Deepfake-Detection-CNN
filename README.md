@@ -7,11 +7,13 @@ Detect AI-generated and manipulated facial images (deepfakes) using deep learnin
 
 ---
 
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)
 - [Project Structure](#project-structure)
 - [Core AI Concepts](#core-ai-concepts-used)
+- [Model Performance](#model-performance)
 - [Results](#results-sample)
 - [Setup & Run](#setup--run)
 - [Future Work](#future-work)
@@ -121,6 +123,25 @@ deepfake_detector/
 ---
 
 
+
+
+## Model Performance
+
+### Classification Metrics
+![Metrics](https://github.com/sjsreehari/deepfake-detection-cnn/blob/main/result/Heatmap%20for%20Confusion%20Matrix.png)
+- **Classification Metrics:** Shows precision, recall, and F1-score for each class.
+
+### ROC Curve
+![ROC Curve](https://github.com/sjsreehari/deepfake-detection-cnn/blob/main/result/ROC%20Curve.png)
+
+### Confusion Matrix
+![Confusion Matrix](https://github.com/sjsreehari/deepfake-detection-cnn/blob/main/result/Heatmap%20for%20Confusion%20Matrix.png)
+
+- **Classification Metrics:** Shows precision, recall, and F1-score for each class.
+- **ROC Curve:** Area under curve (AUC = 0.977) shows excellent class separation.
+- **Confusion Matrix:** Shows number of correct and incorrect predictions for each class.
+
+---
 
 ## Results (Sample)
 
