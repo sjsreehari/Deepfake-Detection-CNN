@@ -9,9 +9,10 @@ __pycache__/
 venv/
 .env
 
+
 # Data and outputs
-/data/
-/outputs/
+data/
+outputs/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
@@ -22,3 +23,9 @@ venv/
 # OS files
 .DS_Store
 Thumbs.db
+tensorflow
+numpy
+matplotlib
+seaborn
+scikit-learn
+kaggle
