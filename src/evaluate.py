@@ -8,7 +8,6 @@ from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
 import matplotlib.pyplot as plt
 
 def main():
-	"""Main evaluation orchestration."""
 	# Load test dataset
 	test_dir = os.path.join(os.path.dirname(__file__), '../data/test')
 	batch_size = 32
