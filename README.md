@@ -132,7 +132,7 @@ deepfake_detector/
 
 
 ### Classification Metrics
-<img src="https://github.com/sjsreehari/deepfake-detection-cnn/blob/main/result/Heatmap%20for%20Confusion%20Matrix.png" alt="Metrics" width="400" height="300" />
+<img src="https://github.com/sjsreehari/Deepfake-Detection-CNN/blob/main/result/Bar%20Graphs%20for%20Precision%2C%20Recall%2C%20F1-Score.png" alt="Metrics" width="400" height="300" />
 
 ### ROC Curve
 <img src="https://github.com/sjsreehari/deepfake-detection-cnn/blob/main/result/ROC%20Curve.png" alt="ROC Curve" width="400" height="300" />
